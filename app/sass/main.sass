@@ -45,7 +45,7 @@ body
 	font-family: $default-font
 	overflow-x: hidden
 	opacity: 1
-	color: #fff
+	// color: #fff
 	&.ishome
 		.site-header
 			min-height: 700px
@@ -310,5 +310,9 @@ html.mm-opened
 		font-family: firasans, sans-serif
 		text-align: center
 
+$colors: $blue, $red, $accent
+@for $i from 1 through length($colors)
+	.carousel-services .owl-item:nth-child(#{length($colors)}n+#{$i})
+		background-color: nth($colors, $i)
 
 @import "media" // Всегда в конце
