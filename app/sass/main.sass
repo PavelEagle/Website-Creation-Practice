@@ -27,13 +27,6 @@
 	color: #666
 	opacity: 1
 
-body input:focus:required:invalid,
-body textarea:focus:required:invalid
-	color: #666
-body input:required:valid,
-body textarea:required:valid
-	color: #666
-
 html, body
 	height: 100%
 
@@ -146,6 +139,8 @@ section
 	&.inverse
 		color: #ffffff
 		background-color: $dark
+		&.s-call
+			background-color: #fff
 	.h2
 		font-size: 30px
 		font-weight: 800
@@ -430,6 +425,17 @@ $colors: $blue, $red, $accent
 		p
 			margin: 30px 0
 			font-size: 18px
+	&-call
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: 10%
+		&::before
+			content: ''
+			width: 50%
+			right: 0
+			height: 100%
+			position: absolute
+			background-color: rgba($accent, .92)
 
 .section-overley
 	&::before
@@ -471,6 +477,76 @@ $colors: $blue, $red, $accent
 	&__active
 		.fotorama__thumb
 			border-color: #3d3c3c
+
+input, textarea, select,
+.selectize-control.single
+	background-color: transparent
+	border: 1px solid rgba(#000000,.1)
+	border-bottom: 2px solid rgba(#000000,.1)
+	border-radius: 2px
+	padding: 8px 22px
+	outline: none
+	display: inline-block
+	font-size: 16px
+	color: #333333
+select 
+	padding: 10px 22px
+
+.success
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	text-transform: 
+	font-weight: bold
+	display: none
+	z-index: 10
+	span
+		margin: auto
+		font-size: 20px
+	& ~ *
+		transition: all .5s ease
+	&.active 
+		& ~ *
+			opacity: .5
+			filter: blur(10px)
+
+.callback
+	padding: 25% 0
+	position: relative
+
+	&-logo
+		img 
+			width: 100px
+			height: auto
+	
+	.formhead
+		margin: 0
+		font-size: 30px
+		color: #ffffff
+	p
+		margin-top: 0
+	
+	input, textarea, select 
+		color: #ffffff
+		width: 100%
+		margin-top: 17px
+
+		&::-webkit-input-placeholder
+			color: #ffffff
+			opacity: 1
+		&::-webkit-moz-placeholder
+			color: #ffffff
+			opacity: 1
+		&::-ms-input-placeholder
+			color: #ffffff
+
+		option 
+			color: #333333
+	
+	.button
+		margin-top: 40px
 
 
 
