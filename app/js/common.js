@@ -127,14 +127,14 @@ $(function() {
 	});
 
 	//Resize Window
-	function onResize() {
-		$('.carousel-services-content').equalHeights();
-	}
-	
-	window.onresize = function () {onResize();};
+function onResize() {
+	$('.carousel-services-content').equalHeights();
+}
+
+window.onresize = function () {onResize();};	
 
 });
 
 $(window).on('load', function() {
-	$('.preloader').delay(1000).fadeOut('slow')
+	$('.preloader').delay(1000).fadeOut('slow');
 })

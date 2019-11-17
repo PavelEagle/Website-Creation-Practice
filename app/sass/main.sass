@@ -156,17 +156,20 @@ body
 			border-radius: 500px
 			position: absolute
 		&::before
-			animation: pulse-outer .8s ease-in infinite
+			animation: pulse-outer 2s ease-in infinite
 		&::after
 			animation: pulse-inner .8s linear infinite
 
 @keyframes pulse-outer
 	0%
 		@include opacity(100)
+		border-color: #333333
 	50%
-		@include opacity(50)	
+		@include opacity(50)
+		border-color: rgba(#333333, 0.5)
 	100%
 		@include opacity(0)
+		border-color: #ffffff
 
 @keyframes pulse-inner
 	0%
@@ -358,9 +361,19 @@ html.mm-opened
 		margin: 18px 0
 		line-height: 38px
 		border-radius: 10em
-		transition: background-color .25s ease
-		&:hover 
-			background-color: rgba(#fff, .4)
+		transition: all .25s ease
+		transform: scale(1)
+		&:hover
+			animation: rotates .5s linear
+			color: red
+
+			@keyframes rotates
+			0%
+				transform: scale(1)
+			50%
+				transform: scale(1.5)
+			100%
+				transform: scale(2)
 
 .header-contacts 
 	position: absolute
